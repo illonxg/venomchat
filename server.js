@@ -1,5 +1,6 @@
+
 const http = require('http');
-const fs = require('fs')
+const fs = require('fs');
 const path = require('path');
 const indexHtmlFile = fs.readFileSync(path.join(__dirname, 'static', 'index.html'))
 const scriptFile = fs.readFileSync(path.join(__dirname, 'static', 'script.js'))
@@ -17,3 +18,18 @@ const server = http.createServer((req,res)=>{
 });
 server.listen(3000);
 
+const { Server } = require("socket.io");
+const io = new Server(server);
+
+io.on('connection', (socket) => {
+    console.log('a user connected. id - ' + socket.id);
+    let userNickname = 'user';
+    socket.on('set_nickname', (nickname) => {
+      userNickname = nickname;
+    });
+    socket.on('new_message', (message) => {
+      io.emit('message', userNickname + ' : ' + message);
+    });
+  });
+  
+  
