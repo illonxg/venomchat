@@ -1,7 +1,3 @@
-h1{
-    color: darkmagenta;
-    text-align: center;
-}
 * {
     margin: 0;
     padding: 0;
@@ -21,6 +17,9 @@ main {
     background-color: #304ffe;
     color: #ffffff;
     height: 4.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 #form {
     position: fixed;
@@ -57,4 +56,3 @@ li {
     font-size: 1.5rem;
     margin: 0.5rem;
 }
-

@@ -2,26 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoboChat</title>
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js" integrity="sha384-mkQ3/7FUtcGyoppY6bz/PORYoGqOl7/aSUMn2ymDOJcapfS6PHqxhRTMh1RR0Q6+" crossorigin="anonymous"></script>
-    <script src="script.js" defer></script>
 </head>
 <body>
     <main>
-        <h1 class="header">Venom Chat</h1>
-        <ul id="messages">
-            <li>Test messages</li>
-            <li>Hello!! Test messages2</li>
-        </ul>
+        <header class="header">
+            <h1>VenomChat</h1>
+            <button onclick="changeNickname()">Change Nick</button>
+        </header>
+        <ul id="messages"></ul>
         <form id="form">
             <input type="text" id="input" placeholder="Enter message...">
             <input type="submit" class="submit" value="Send">
         </form>
     </main>
-    
-
 </body>
+<script src="https://cdn.socket.io/4.5.3/socket.io.min.js" integrity="sha384-WPFUvHkB1aHA5TDSZi6xtDgkF0wXJcIIxXhC6h8OT8EH3fC5PWro5pWJ1THjcfEi" crossorigin="anonymous"></script>
 <script src="script.js"></script>
 </html>
